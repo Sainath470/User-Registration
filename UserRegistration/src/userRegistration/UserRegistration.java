@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class UserRegistration{
 	String firstName;
 	String lastName;
+	String email;
 	Scanner input=new Scanner(System.in);
 
 	//Method for taking first name as input
@@ -27,6 +28,13 @@ public class UserRegistration{
 		String name=input.next();
 		return name;
 	}
+	
+	public String getUserEmail()
+	{
+		System.out.println("Please Enter your valid email");	
+		String email=input.next();
+		return email;
+	}
 
 	//Method for input checking
 	public void userValidator()
@@ -37,7 +45,9 @@ public class UserRegistration{
 		this.lastName=getLastName();
 		Boolean lName=Pattern.matches("^[A-Z][a-z]{2,}", lastName);
 		printingResult(lName);
-	
+		this.email=getUserEmail();
+		Boolean emailid=Pattern.matches("^[a-zA-Z.]+([a-z]+)?[@][a-z]+\\.[a-z]{2,3}(\\.[A-Za-z]{2,6})?", email);
+		printingResult(emailid);
 	}
 
 	public static void printingResult(boolean check)
@@ -51,7 +61,6 @@ public class UserRegistration{
 			System.out.println("INVALID");
 		}
 	}
-
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the User Registration");
