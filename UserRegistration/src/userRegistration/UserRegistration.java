@@ -73,7 +73,8 @@ public class UserRegistration{
 		System.out.print("Your entered Phone number is ");
 		printingResult(pNumber);
 		this.passWord=getPassword();
-		Boolean pass=Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$", passWord);
+		Boolean pass=Pattern.matches("[\\S]{8,}", passWord) && Pattern.matches(".*[A-Z].*", passWord)
+				&& Pattern.matches(".*[0-9].*", passWord) && Pattern.matches(".*[\\W]{1}.*", passWord);
 		System.out.print("Your entered PassWord is ");
 		printingResult(pass);
 	}
