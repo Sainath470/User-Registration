@@ -45,7 +45,7 @@ public class UserRegistration{
 		String phoneNum=input.next();
 		return phoneNum;
 	}
-	
+
 	public String getPassword()
 	{
 		System.out.println("Enter the Password");	
@@ -73,7 +73,7 @@ public class UserRegistration{
 		System.out.print("Your entered Phone number is ");
 		printingResult(pNumber);
 		this.passWord=getPassword();
-		Boolean pass=Pattern.matches("[a-z|A-Z]{8,}", passWord);
+		Boolean pass=Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$", passWord);
 		System.out.print("Your entered PassWord is ");
 		printingResult(pass);
 	}
