@@ -28,10 +28,10 @@ public class UserRegistration{
 		String name=input.next();
 		return name;
 	}
-	
+
 	public String getUserEmail()
 	{
-		System.out.println("Please Enter your valid email");	
+		System.out.println("Enter your valid Email");	
 		String email=input.next();
 		return email;
 	}
@@ -62,7 +62,8 @@ public class UserRegistration{
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		System.out.println("Welcome to the User Registration");
 		UserRegistration userinput=new UserRegistration();
 		userinput.userValidator();
